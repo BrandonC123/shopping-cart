@@ -1,22 +1,39 @@
 import { useState } from "react";
-import Header from "./Header";
-import ViewItems from "./ViewItems";
+import ItemCard from "./ItemCard";
 
 const Shop = () => {
-    const [itemCount, setItemCount] = useState(0);
-    const [userItemList, setUserItemList] = useState([
-        { quantity: "", title: "", imgSrc: "", price: "" },
+    const [itemArray, setItemArray] = useState([
+        {
+            title: "Sunglass 1",
+            imgSrc: "./img/sunglass-1.png",
+            price: "119.99",
+            description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
+            elit. Rerum reiciendis fugiat quisquam possimus recusandae 
+            similique daliquam voluptatibus eaque! Qui, dicta?`,
+        },
+        {
+            title: "Sunglass 2",
+            imgSrc: "./img/sunglass-2.png",
+            price: "119.99",
+            description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
+            elit. Rerum reiciendis fugiat quisquam possimus recusandae 
+            similique daliquam voluptatibus eaque! Qui, dicta?`,
+        },
+        {
+            title: "Sunglass 2",
+            imgSrc: "./img/sunglass-3.png",
+            price: "119.99",
+            description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
+            elit. Rerum reiciendis fugiat quisquam possimus recusandae 
+            similique daliquam voluptatibus eaque! Qui, dicta?`,
+        },
     ]);
-    function changeItemCount(add) {}
-    return (
-        <div>
-            <Header itemCount={itemCount} />
-            <ViewItems
-                changeItemCount={changeItemCount}
-                setItemCount={setItemCount}
-            />
-        </div>
-    );
+    function displayItems() {
+        return itemArray.map((item) => {
+            return <ItemCard item={item} />;
+        });
+    }
+    return <div className="item-card-container">{displayItems()}</div>;
 };
 
 export default Shop;
