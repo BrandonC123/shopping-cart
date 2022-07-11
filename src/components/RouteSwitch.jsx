@@ -1,17 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import App from "../App";
-import Header from "./Header";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home";
 import Shop from "./Shop";
+import ItemPage from "./ItemPage";
 
-const RouteSwitch = () => {
+const RouteSwitch = ({ itemCount, changeItemCount, setUserItemList }) => {
     return (
-        <Router>
-            <Header />
-            <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="/shop" element={<Shop />} />
-            </Routes>
-        </Router>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+                path="/shop"
+                element={
+                    <Shop
+                        changeItemCount={changeItemCount}
+                        setUserItemList={setUserItemList}
+                    />
+                }
+            />
+            <Route path="/shop/:item" element={<ItemPage />} />
+        </Routes>
     );
 };
 
