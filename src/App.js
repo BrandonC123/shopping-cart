@@ -7,10 +7,15 @@ import Header from "./components/Header";
 
 function App() {
     const [itemCount, setItemCount] = useState(0);
-    const [userItemList, setUserItemList] = useState([
-        { quantity: "", title: "", imgSrc: "", price: "" },
-    ]);
+    const [userItemList, setUserItemList] = useState([]);
     function changeItemCount(add) {}
+    function addOrDeleteToCart(add, item) {
+        if (add) {
+            setUserItemList([...userItemList, item]);
+            setItemCount(itemCount + JSON.parse(item.quantity));
+            console.log(userItemList);
+        }
+    }
 
     return (
         <Router>
@@ -22,7 +27,7 @@ function App() {
                         <RouteSwitch
                             changeItemCount={changeItemCount}
                             userItemList={userItemList}
-                            setUserItemList={setUserItemList}
+                            addOrDeleteToCart={addOrDeleteToCart}
                         />
                     }
                 />

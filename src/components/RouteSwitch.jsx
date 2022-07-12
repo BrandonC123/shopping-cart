@@ -2,21 +2,29 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Shop from "./Shop";
 import ItemPage from "./ItemPage";
+import ShoppingCart from "./ShoppingCart";
 
-const RouteSwitch = ({ itemCount, changeItemCount, setUserItemList }) => {
+const RouteSwitch = ({ changeItemCount, userItemList, addOrDeleteToCart }) => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
             <Route
-                path="/shop"
+                path="/shop/*"
                 element={
                     <Shop
                         changeItemCount={changeItemCount}
-                        setUserItemList={setUserItemList}
+                        addOrDeleteToCart={addOrDeleteToCart}
                     />
                 }
             />
-            <Route path="/shop/:item" element={<ItemPage />} />
+            <Route
+                path="/shop/:item"
+                element={<ItemPage addOrDeleteToCart={addOrDeleteToCart} />}
+            />
+            <Route
+                path="/shopping-cart"
+                element={<ShoppingCart userItemList={userItemList} />}
+            />
         </Routes>
     );
 };
