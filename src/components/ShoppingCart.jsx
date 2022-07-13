@@ -1,6 +1,10 @@
 import ShoppingCartItem from "./ShoppingCartItem";
 
-const ShoppingCart = ({ userItemList, addOrDeleteToCart }) => {
+const ShoppingCart = ({
+    userItemList,
+    addOrDeleteToCart,
+    changeItemQuantity,
+}) => {
     function displayCartItems() {
         return userItemList.map((itemData) => {
             return (
@@ -8,6 +12,7 @@ const ShoppingCart = ({ userItemList, addOrDeleteToCart }) => {
                     itemData={itemData}
                     userItemList={userItemList}
                     addOrDeleteToCart={addOrDeleteToCart}
+                    changeItemQuantity={changeItemQuantity}
                 />
             );
         });

@@ -1,28 +1,25 @@
-const ShoppingCartItem = ({ itemData, userItemList, addOrDeleteToCart }) => {
+const ShoppingCartItem = ({
+    itemData,
+    userItemList,
+    addOrDeleteToCart,
+    changeItemQuantity,
+}) => {
     console.log(itemData);
     let quantity = itemData.quantity;
     const item = itemData.item;
-    function changeItemQuantity(add) {
-        const index = userItemList
-            .map((itemData) => {
-                return itemData.item.title;
-            })
-            .indexOf(item.title);
-        let tempArray = Array.from(userItemList);
-        if (add) {
-            userItemList[index].quantity = quantity + 1;
-        } else {
-            userItemList[index].quantity = quantity - 1;
-        }
-    }
+
     return (
         <div className="shopping-cart-item">
             <img src={item.imgSrc} alt={item.title} />
             <div className="shopping-cart-item-content">
                 <div className="item-quantity-container row">
-                    <button onClick={() => changeItemQuantity()}>-</button>
+                    <button onClick={() => changeItemQuantity(false, itemData)}>
+                        -
+                    </button>
                     <p id={item.title.toLowerCase().trim()}>{quantity}</p>
-                    <button>+</button>
+                    <button onClick={() => changeItemQuantity(true, itemData)}>
+                        +
+                    </button>
                 </div>
                 <button
                     onClick={() => {
