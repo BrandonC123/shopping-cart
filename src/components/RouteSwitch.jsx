@@ -4,18 +4,13 @@ import Shop from "./Shop";
 import ItemPage from "./ItemPage";
 import ShoppingCart from "./ShoppingCart";
 
-const RouteSwitch = ({ changeItemCount, userItemList, addOrDeleteToCart }) => {
+const RouteSwitch = ({ userItemList, addOrDeleteToCart }) => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
             <Route
                 path="/shop/*"
-                element={
-                    <Shop
-                        changeItemCount={changeItemCount}
-                        addOrDeleteToCart={addOrDeleteToCart}
-                    />
-                }
+                element={<Shop addOrDeleteToCart={addOrDeleteToCart} />}
             />
             <Route
                 path="/shop/:item"
@@ -23,7 +18,12 @@ const RouteSwitch = ({ changeItemCount, userItemList, addOrDeleteToCart }) => {
             />
             <Route
                 path="/shopping-cart"
-                element={<ShoppingCart userItemList={userItemList} />}
+                element={
+                    <ShoppingCart
+                        userItemList={userItemList}
+                        addOrDeleteToCart={addOrDeleteToCart}
+                    />
+                }
             />
         </Routes>
     );

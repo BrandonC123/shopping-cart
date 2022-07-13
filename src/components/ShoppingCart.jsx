@@ -1,9 +1,15 @@
 import ShoppingCartItem from "./ShoppingCartItem";
 
-const ShoppingCart = ({ userItemList }) => {
+const ShoppingCart = ({ userItemList, addOrDeleteToCart }) => {
     function displayCartItems() {
         return userItemList.map((itemData) => {
-            return <ShoppingCartItem itemData={itemData} />;
+            return (
+                <ShoppingCartItem
+                    itemData={itemData}
+                    userItemList={userItemList}
+                    addOrDeleteToCart={addOrDeleteToCart}
+                />
+            );
         });
     }
     return (
