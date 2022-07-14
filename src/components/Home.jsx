@@ -79,7 +79,7 @@ const Home = () => {
                     </h1>
                     <img
                         className="home-image"
-                        src={currentImage.imgSrc}
+                        src={process.env.PUBLIC_URL + currentImage.imgSrc}
                         alt={currentImage.altText}
                     />
                 </div>

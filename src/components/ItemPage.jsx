@@ -7,7 +7,11 @@ const ItemPage = ({ addOrDeleteToCart }) => {
     const [quantity, setQuantity] = useState(1);
     return (
         <section className="item-page-container container row">
-            <img className="item-page-img" src={item.imgSrc} alt={item.title} />
+            <img
+                className="item-page-img"
+                src={process.env.PUBLIC_URL + item.imgSrc}
+                alt={item.title}
+            />
             <div className="item-page-content">
                 <p>{item.title}</p>
                 <p>{item.price}</p>

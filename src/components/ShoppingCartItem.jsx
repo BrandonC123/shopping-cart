@@ -8,7 +8,7 @@ const ShoppingCartItem = ({
 
     return (
         <div className="shopping-cart-item">
-            <img src={item.imgSrc} alt={item.title} />
+            <img src={process.env.PUBLIC_URL + item.imgSrc} alt={item.title} />
             <div className="shopping-cart-item-content column">
                 <div className="item-quantity-container row">
                     <button

@@ -16,7 +16,7 @@ const Header = ({ itemCount }) => {
                         data-testid="shopping-cart"
                     >
                         <img
-                            src="/img/shopping-cart-icon.svg"
+                            src={process.env.PUBLIC_URL + "/img/shopping-cart-icon.svg"}
                             alt="Shopping cart icon"
                         />
                         {itemCount} Shopping Cart
