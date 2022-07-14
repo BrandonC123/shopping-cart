@@ -78,7 +78,7 @@ function App() {
             <Header itemCount={itemCount} />
             <Routes>
                 <Route
-                    path="*"
+                    path="/*"
                     element={
                         <RouteSwitch
                             userItemList={userItemList}

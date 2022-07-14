@@ -67,7 +67,10 @@ const Home = () => {
                     <h1 className="home-text">
                         <span>
                             Sunglass Store{" "}
-                            <Link className="shop-now-link" to={"/shop"}>
+                            <Link
+                                className="shop-now-link"
+                                to={"/shopping-cart/shop/"}
+                            >
                                 Shop Now
                             </Link>
                             <br />

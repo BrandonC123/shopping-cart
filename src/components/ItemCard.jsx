@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ItemCard = ({ item }) => {
     return (
         <Link
-            to={`/shop/${item.title}`}
+            to={`/shopping-cart/shop/${item.title}`}
             state={{ item: item }}
             data-testid={item.title}
         >

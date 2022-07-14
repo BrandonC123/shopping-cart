@@ -11,17 +11,17 @@ const RouteSwitch = ({
 }) => {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/shopping-cart/" element={<Home />} />
             <Route
-                path="/shop/*"
+                path="/shopping-cart/shop/*"
                 element={<Shop addOrDeleteToCart={addOrDeleteToCart} />}
             />
             <Route
-                path="/shop/:item"
+                path="/shopping-cart/shop/:item"
                 element={<ItemPage addOrDeleteToCart={addOrDeleteToCart} />}
             />
             <Route
-                path="/shopping-cart"
+                path="/shopping-cart/home/shopping-cart"
                 element={
                     <ShoppingCart
                         userItemList={userItemList}
