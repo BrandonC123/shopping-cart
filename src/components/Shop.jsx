@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SaleBanner from "./SaleBanner";
 import ItemCard from "./ItemCard";
 
 const Shop = () => {
@@ -106,9 +107,10 @@ const Shop = () => {
         });
     }
     return (
-        <div className="item-card-container">
-            {displayItems()}
-        </div>
+        <>
+            <SaleBanner />
+            <div className="item-card-container">{displayItems()}</div>
+        </>
     );
 };
 

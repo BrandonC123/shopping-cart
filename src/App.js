@@ -1,8 +1,9 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RouteSwitch from "./components/RouteSwitch";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
+import SaleBanner from "./components/SaleBanner";
 
 function App() {
     const [userItemList, setUserItemList] = useState([
@@ -31,7 +32,6 @@ function App() {
             // quantity is just changed in else statement
             if (index === -1) {
                 setUserItemList([...userItemList, item]);
-                setItemCount(itemCount + JSON.parse(item.quantity));
                 console.log(userItemList);
             } else {
                 let tempArray = Array.from(userItemList);
@@ -39,7 +39,6 @@ function App() {
                 setUserItemList(tempArray);
                 console.log(index);
             }
-            setItemCount(itemCount + JSON.parse(quantity));
         } else {
             let tempArray = Array.from(userItemList);
             tempArray.splice(index, 1);
@@ -66,6 +65,16 @@ function App() {
         }
         setUserItemList(tempArray);
     }
+    function updateCounter() {
+        let total = 0;
+        userItemList.forEach((itemData) => {
+            total += JSON.parse(itemData.quantity);
+        });
+        setItemCount(total);
+    }
+    useEffect(() => {
+        updateCounter();
+    }, [userItemList]);
     return (
         <Router>
             <Header itemCount={itemCount} />
