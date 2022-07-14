@@ -1,3 +1,6 @@
+Sample sunglass shopping cart app using ReactJS includes home, shop, and shopping cart routes using react-router-dom. [Link here](https://brandonc123.github.io/shopping-cart/)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
