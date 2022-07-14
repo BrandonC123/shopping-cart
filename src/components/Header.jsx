@@ -11,9 +11,12 @@ const Header = ({ itemCount }) => {
                     <li>Shop</li>
                 </Link>
                 <Link to={"/shopping-cart"}>
-                    <li className="shopping-cart-icon-container">
+                    <li
+                        className="shopping-cart-icon-container"
+                        data-testid="shopping-cart"
+                    >
                         <img
-                            src="./img/shopping-cart-icon.svg"
+                            src="/img/shopping-cart-icon.svg"
                             alt="Shopping cart icon"
                         />
                         {itemCount} Shopping Cart
