@@ -7,6 +7,7 @@ import ItemPage from "./components/ItemPage";
 import Shop from "./components/Shop";
 import { useState } from "react";
 import { act } from "react-dom/test-utils";
+import ShoppingCart from "./components/ShoppingCart";
 
 describe("Shop component", () => {
     it("Properly renders item via ViewItems component", () => {
@@ -36,6 +37,9 @@ describe("Shop component", () => {
             screen.getByRole("button", { name: "Add to Cart" }).textContent
         ).toMatch("Add to Cart");
     });
+});
+
+describe("Shopping Cart", () => {
     it("Adds to cart properly", () => {
         let itemCount = 0;
         const { rerender } = render(<Header itemCount={itemCount} />, {
@@ -64,5 +68,60 @@ describe("Shop component", () => {
         expect(screen.getByText("1 Shopping Cart").textContent).toMatch(
             "1 Shopping Cart"
         );
+    });
+    it("Total price is calculated correctly", () => {
+        render(
+            <ShoppingCart
+                userItemList={[
+                    {
+                        quantity: 2,
+                        item: {
+                            description: `Lorem ipsum, dolor sit amet consectetur 
+                adipisicing elit. Rerum reiciendis fugiat quisquam possimus 
+                recusandae similique daliquam voluptatibus eaque! Qui, dicta?`,
+                            imgSrc: "/img/sunglass-1.png",
+                            price: "119.99",
+                            title: "Sunglass 1",
+                        },
+                    },
+                ]}
+            />
+        );
+        expect(screen.getByText("Total: $239.98").textContent).toMatch(
+            "Total: $239.98"
+        );
+    });
+    it("Deletes item from cart properly", () => {
+        const addOrDeleteToCart = jest.fn(() => {
+            userItemList = [];
+            rerender(
+                <ShoppingCart
+                    userItemList={userItemList}
+                    addOrDeleteToCart={addOrDeleteToCart}
+                />
+            );
+        });
+        let userItemList = [
+            {
+                quantity: 2,
+                item: {
+                    description: `Lorem ipsum, dolor sit amet consectetur 
+        adipisicing elit. Rerum reiciendis fugiat quisquam possimus 
+        recusandae similique daliquam voluptatibus eaque! Qui, dicta?`,
+                    imgSrc: "/img/sunglass-1.png",
+                    price: "119.99",
+                    title: "Sunglass 1",
+                },
+            },
+        ];
+        const { Cart, rerender } = render(
+            <ShoppingCart
+                userItemList={userItemList}
+                addOrDeleteToCart={addOrDeleteToCart}
+            />
+        );
+        render(Cart);
+        userEvent.click(screen.getByRole("button", { name: "Delete" }));
+        expect(screen.getByText("Total: $0").textContent).toMatch("Total: $0");
     });
 });

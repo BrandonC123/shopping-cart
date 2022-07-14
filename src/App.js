@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import RouteSwitch from "./components/RouteSwitch";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import SaleBanner from "./components/SaleBanner";
 
 function App() {
     const [userItemList, setUserItemList] = useState([
+        // Hardcoded test Item
         {
             quantity: 1,
             item: {
@@ -20,24 +20,22 @@ function App() {
         },
     ]);
     const [itemCount, setItemCount] = useState(0);
-    function addOrDeleteToCart(add, item) {
+    function addOrDeleteToCart(add, itemData) {
         const index = userItemList
             .map((itemData) => {
                 return itemData.item.title;
             })
-            .indexOf(item.item.title);
+            .indexOf(itemData.item.title);
         if (add) {
-            const quantity = JSON.parse(item.quantity);
+            const quantity = JSON.parse(itemData.quantity);
             // Index = -1 means the same item is not already in the cart otherwise
             // quantity is just changed in else statement
             if (index === -1) {
-                setUserItemList([...userItemList, item]);
-                console.log(userItemList);
+                setUserItemList([...userItemList, itemData]);
             } else {
                 let tempArray = Array.from(userItemList);
                 tempArray[index].quantity += quantity;
                 setUserItemList(tempArray);
-                console.log(index);
             }
         } else {
             let tempArray = Array.from(userItemList);
@@ -45,20 +43,20 @@ function App() {
             setUserItemList(tempArray);
         }
     }
-    function changeItemQuantity(add, item) {
-        const quantity = item.quantity;
+    function changeItemQuantity(add, itemData) {
+        const quantity = itemData.quantity;
         const index = userItemList
             .map((itemData) => {
                 return itemData.item.title;
             })
-            .indexOf(item.item.title);
+            .indexOf(itemData.item.title);
         let tempArray = Array.from(userItemList);
         if (add) {
-            tempArray[index] = { quantity: quantity + 1, item: item.item };
+            tempArray[index] = { quantity: quantity + 1, item: itemData.item };
         } else {
             // If quantity is 0 after subtracting, delete from cart
             if (tempArray[index].quantity - 1 === 0) {
-                addOrDeleteToCart(false, item);
+                addOrDeleteToCart(false, itemData);
                 return;
             }
             tempArray[index].quantity = quantity - 1;

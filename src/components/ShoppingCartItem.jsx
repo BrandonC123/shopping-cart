@@ -3,7 +3,6 @@ const ShoppingCartItem = ({
     addOrDeleteToCart,
     changeItemQuantity,
 }) => {
-    console.log(itemData);
     let quantity = itemData.quantity;
     const item = itemData.item;
 

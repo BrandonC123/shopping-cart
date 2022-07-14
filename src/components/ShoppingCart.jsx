@@ -12,6 +12,10 @@ const ShoppingCart = ({
             return (
                 <ShoppingCartItem
                     itemData={itemData}
+                    key={itemData.item.title
+                        .trim()
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}
                     userItemList={userItemList}
                     addOrDeleteToCart={addOrDeleteToCart}
                     changeItemQuantity={changeItemQuantity}

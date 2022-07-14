@@ -103,7 +103,12 @@ const Shop = () => {
     ]);
     function displayItems() {
         return itemArray.map((item) => {
-            return <ItemCard item={item} />;
+            return (
+                <ItemCard
+                    key={item.title.trim().toLowerCase().replace(/\s+/g, "-")}
+                    item={item}
+                />
+            );
         });
     }
     return (
