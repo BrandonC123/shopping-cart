@@ -19,13 +19,14 @@ const ItemPage = ({ addOrDeleteToCart }) => {
                     }}
                     type="number"
                     defaultValue={1}
+                    min={1}
                     id="item-quantity"
                 />
                 <button
                     onClick={() => {
                         addOrDeleteToCart(true, { quantity: quantity, item });
                     }}
-                    className="action-btn"
+                    className="action-btn btn"
                 >
                     Add to Cart
                 </button>

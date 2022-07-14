@@ -1,6 +1,5 @@
 const ShoppingCartItem = ({
     itemData,
-    userItemList,
     addOrDeleteToCart,
     changeItemQuantity,
 }) => {
@@ -13,16 +12,17 @@ const ShoppingCartItem = ({
             <img src={item.imgSrc} alt={item.title} />
             <div className="shopping-cart-item-content column">
                 <div className="item-quantity-container row">
-                    <button onClick={() => changeItemQuantity(false, itemData)}>
+                    <button
+                        onClick={() => changeItemQuantity(false, itemData)}
+                        className="item-quantity-btn"
+                    >
                         -
                     </button>
-                    <div
-                        className="item-quantity"
-                        id={item.title.toLowerCase().trim()}
+                    <div className="item-quantity">{quantity}</div>
+                    <button
+                        onClick={() => changeItemQuantity(true, itemData)}
+                        className="item-quantity-btn"
                     >
-                        {quantity}
-                    </div>
-                    <button onClick={() => changeItemQuantity(true, itemData)}>
                         +
                     </button>
                 </div>

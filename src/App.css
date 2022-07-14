@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 :root {
     --danger-color: rgb(230, 11, 11);
+    --accent-color: rgb(244, 188, 28);
 }
 
 html,
@@ -39,6 +40,12 @@ img {
     border-radius: 100px;
 }
 
+.action-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+}
+
 .danger-btn {
     background-color: var(--danger-color);
     color: white;
@@ -73,7 +80,9 @@ img {
 }
 
 .header-nav a:hover,
-.btn:hover {
+.btn:hover,
+.item-quantity-btn:hover,
+.shop-now-link:hover {
     opacity: 0.75;
 }
 
@@ -96,7 +105,6 @@ img {
     background-color: rgb(1, 1, 104);
     color: white;
     padding: 1em 0;
-    /* margin-bottom: 2em; */
 }
 
 .home-image {
@@ -105,7 +113,6 @@ img {
 }
 
 .home-text {
-    /* color: white; */
     margin: 5% 10%;
     position: absolute;
     text-shadow: 5px 5px 5px gray;
@@ -123,8 +130,22 @@ img {
 .home-page-btns {
     justify-content: space-between;
     margin: auto 0;
+    top: 45%;
     width: 100%;
-    position: absolute;
+    position: fixed;
+}
+
+.item-quantity-container {
+    align-items: center;
+}
+
+.image-cycle-btn,
+.item-quantity-btn {
+    background-color: rgb(231, 231, 231);
+    padding: 0.75em;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 .image-cycle-btn {
@@ -155,7 +176,7 @@ img {
 }
 
 .item-page-container {
-    margin: 0 auto;
+    margin: 1em auto;
     gap: 15px;
 }
 

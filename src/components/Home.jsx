@@ -4,28 +4,38 @@ import SaleBanner from "./SaleBanner";
 
 const Home = () => {
     const [homeImgArray, setHomeImgArray] = useState([
-        { imgSrc: "/img/home-image-1.jpg" },
-        { imgSrc: "/img/home-image-2.jpg" },
-        { imgSrc: "/img/home-image-3.jpg" },
+        {
+            imgSrc: "/img/home-image-1.jpg",
+            altText: "Sunglass resting on sand at a beach.",
+        },
+        {
+            imgSrc: "/img/home-image-2.jpg",
+            altText: "Mountain landscape with fog",
+        },
+        {
+            imgSrc: "/img/home-image-3.jpg",
+            altText: "Display of 16 sunglasses on a white shelf",
+        },
     ]);
     const [counter, setCounter] = useState(0);
     useEffect(() => {
-        setTimeout(() => {
+        let interval = setInterval(() => {
             cycleImage(true);
         }, 10000);
         setCurrentImage(homeImgArray[counter]);
+        return () => clearInterval(interval);
     }, [counter]);
     const [currentImage, setCurrentImage] = useState(homeImgArray[counter]);
     function cycleImage(add) {
         if (add) {
             if (counter + 1 < homeImgArray.length) {
-                setCounter(counter + 1);
+                setCounter((counter) => counter + 1);
             } else {
                 setCounter(0);
             }
         } else {
-            if (counter - 1 <= 0) {
-                setCounter(counter - 1);
+            if (counter - 1 >= 0) {
+                setCounter((counter) => counter - 1);
             } else {
                 setCounter(homeImgArray.length - 1);
             }
@@ -38,7 +48,7 @@ const Home = () => {
                 <div className="home-page-btns row">
                     <button
                         onClick={() => {
-                            cycleImage(true);
+                            cycleImage(false);
                         }}
                         className="image-cycle-btn"
                     >
@@ -56,16 +66,18 @@ const Home = () => {
                 <div>
                     <h1 className="home-text">
                         <span>
-                            Sunglass Store <Link to={"/shop"}>Shop Now</Link>
+                            Sunglass Store{" "}
+                            <Link className="shop-now-link" to={"/shop"}>
+                                Shop Now
+                            </Link>
                             <br />
                         </span>{" "}
                         Enjoy in Nature
-                        {/* {imageText} */}
                     </h1>
                     <img
                         className="home-image"
                         src={currentImage.imgSrc}
-                        alt="Mountain landscape with fog"
+                        alt={currentImage.altText}
                     />
                 </div>
             </div>
