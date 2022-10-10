@@ -1,13 +1,29 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.0adcf47a.css",
-    "main.js": "/shopping-cart/static/js/main.2693d80f.js",
+    "main.css": "/shopping-cart/static/css/main.70d85bfa.css",
+    "main.js": "/shopping-cart/static/js/main.7b7e6cc7.js",
+    "static/media/home-image-2.jpg": "/shopping-cart/static/media/home-image-2.c22d6ef8eac21c1807d4.jpg",
+    "static/media/home-image-1.jpg": "/shopping-cart/static/media/home-image-1.3e8baa2a168274bcabb9.jpg",
+    "static/media/home-image-3.jpg": "/shopping-cart/static/media/home-image-3.6f4cd7391aaeee1362f4.jpg",
+    "static/media/sunglass-4.png": "/shopping-cart/static/media/sunglass-4.3cd199aa6112e7d5a8a0.png",
+    "static/media/sunglass-10.png": "/shopping-cart/static/media/sunglass-10.7ac5c64250fbed2cd046.png",
+    "static/media/sunglass-2.png": "/shopping-cart/static/media/sunglass-2.5851dca9ffab129991da.png",
+    "static/media/sunglass-1.png": "/shopping-cart/static/media/sunglass-1.cbc78b8d5520a2738467.png",
+    "static/media/sunglass-6.png": "/shopping-cart/static/media/sunglass-6.d6d859ecfab64332b02d.png",
+    "static/media/sunglass-5.png": "/shopping-cart/static/media/sunglass-5.ea4e80fdd3b05527ce3f.png",
+    "static/media/sunglass-3.png": "/shopping-cart/static/media/sunglass-3.5dd4728c955a8a2348c9.png",
+    "static/media/sunglass-12.png": "/shopping-cart/static/media/sunglass-12.171fef3b640fd1ea5217.png",
+    "static/media/sunglass-11.png": "/shopping-cart/static/media/sunglass-11.d60e31bd2f5abf830899.png",
+    "static/media/sunglass-8.png": "/shopping-cart/static/media/sunglass-8.384162670ef43d48ec36.png",
+    "static/media/sunglass-9.png": "/shopping-cart/static/media/sunglass-9.761959ca8b3ae601e2ff.png",
+    "static/media/sunglass-7.png": "/shopping-cart/static/media/sunglass-7.cb88200d8e476b6e90e4.png",
+    "static/media/shopping-cart-icon.svg": "/shopping-cart/static/media/shopping-cart-icon.0be41d85449aaf37e816b95e5af94149.svg",
     "index.html": "/shopping-cart/index.html",
-    "main.0adcf47a.css.map": "/shopping-cart/static/css/main.0adcf47a.css.map",
-    "main.2693d80f.js.map": "/shopping-cart/static/js/main.2693d80f.js.map"
+    "main.70d85bfa.css.map": "/shopping-cart/static/css/main.70d85bfa.css.map",
+    "main.7b7e6cc7.js.map": "/shopping-cart/static/js/main.7b7e6cc7.js.map"
   },
   "entrypoints": [
-    "static/css/main.0adcf47a.css",
-    "static/js/main.2693d80f.js"
+    "static/css/main.70d85bfa.css",
+    "static/js/main.7b7e6cc7.js"
   ]
 }
