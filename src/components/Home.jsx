@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SaleBanner from "./SaleBanner";
+import beach from "../img/home-image-1.jpg";
+import mountain from "../img/home-image-2.jpg";
+import sunglassDisplay from "../img/home-image-3.jpg";
 
 const Home = () => {
-    const [homeImgArray, setHomeImgArray] = useState([
+    const homeImgArray = [
         {
-            imgSrc: "/img/home-image-1.jpg",
+            imgSrc: beach,
             altText: "Sunglass resting on sand at a beach.",
         },
         {
-            imgSrc: "/img/home-image-2.jpg",
+            imgSrc: mountain,
             altText: "Mountain landscape with fog",
         },
         {
-            imgSrc: "/img/home-image-3.jpg",
+            imgSrc: sunglassDisplay,
             altText: "Display of 16 sunglasses on a white shelf",
         },
-    ]);
+    ];
     const [counter, setCounter] = useState(0);
     useEffect(() => {
         let interval = setInterval(() => {
@@ -52,7 +55,7 @@ const Home = () => {
                         }}
                         className="image-cycle-btn"
                     >
-                        {"<"}
+                        {"←"}
                     </button>
                     <button
                         onClick={() => {
@@ -60,7 +63,7 @@ const Home = () => {
                         }}
                         className="image-cycle-btn"
                     >
-                        {">"}
+                        {"→"}
                     </button>
                 </div>
                 <div>
@@ -79,7 +82,7 @@ const Home = () => {
                     </h1>
                     <img
                         className="home-image"
-                        src={process.env.PUBLIC_URL + currentImage.imgSrc}
+                        src={currentImage.imgSrc}
                         alt={currentImage.altText}
                     />
                 </div>

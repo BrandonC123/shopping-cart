@@ -146,15 +146,18 @@ img {
     border: 1px solid black;
     border-radius: 5px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .image-cycle-btn {
     opacity: 0.25;
     font-size: 1.12rem;
+    border: none;
 }
 
 .image-cycle-btn:hover {
     opacity: 0.9;
+    background-color: #f5f5f5;
 }
 
 .item-card-container {

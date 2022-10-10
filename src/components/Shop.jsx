@@ -1,12 +1,23 @@
-import { useState } from "react";
 import SaleBanner from "./SaleBanner";
 import ItemCard from "./ItemCard";
+import sunglass1 from "../img/sunglass-1.png";
+import sunglass2 from "../img/sunglass-2.png";
+import sunglass3 from "../img/sunglass-3.png";
+import sunglass4 from "../img/sunglass-4.png";
+import sunglass5 from "../img/sunglass-5.png";
+import sunglass6 from "../img/sunglass-6.png";
+import sunglass7 from "../img/sunglass-7.png";
+import sunglass8 from "../img/sunglass-8.png";
+import sunglass9 from "../img/sunglass-9.png";
+import sunglass10 from "../img/sunglass-10.png";
+import sunglass11 from "../img/sunglass-11.png";
+import sunglass12 from "../img/sunglass-12.png";
 
 const Shop = () => {
-    const [itemArray, setItemArray] = useState([
+    const itemArray = [
         {
             title: "Sunglass 1",
-            imgSrc: "/img/sunglass-1.png",
+            imgSrc: sunglass1,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
@@ -14,7 +25,7 @@ const Shop = () => {
         },
         {
             title: "Sunglass 2",
-            imgSrc: "/img/sunglass-2.png",
+            imgSrc: sunglass2,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
@@ -22,7 +33,7 @@ const Shop = () => {
         },
         {
             title: "Sunglass 3",
-            imgSrc: "/img/sunglass-3.png",
+            imgSrc: sunglass3,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
@@ -30,7 +41,7 @@ const Shop = () => {
         },
         {
             title: "Sunglass 4",
-            imgSrc: "/img/sunglass-4.png",
+            imgSrc: sunglass4,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
@@ -38,7 +49,7 @@ const Shop = () => {
         },
         {
             title: "Sunglass 5",
-            imgSrc: "/img/sunglass-5.png",
+            imgSrc: sunglass5,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
@@ -46,7 +57,7 @@ const Shop = () => {
         },
         {
             title: "Sunglass 6",
-            imgSrc: "/img/sunglass-6.png",
+            imgSrc: sunglass6,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
@@ -54,7 +65,7 @@ const Shop = () => {
         },
         {
             title: "Sunglass 7",
-            imgSrc: "/img/sunglass-7.png",
+            imgSrc: sunglass7,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
@@ -62,7 +73,7 @@ const Shop = () => {
         },
         {
             title: "Sunglass 8",
-            imgSrc: "/img/sunglass-8.png",
+            imgSrc: sunglass8,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
@@ -70,7 +81,7 @@ const Shop = () => {
         },
         {
             title: "Sunglass 9",
-            imgSrc: "/img/sunglass-9.png",
+            imgSrc: sunglass9,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
@@ -78,7 +89,7 @@ const Shop = () => {
         },
         {
             title: "Sunglass 10",
-            imgSrc: "/img/sunglass-10.png",
+            imgSrc: sunglass10,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
@@ -86,7 +97,7 @@ const Shop = () => {
         },
         {
             title: "Sunglass 11",
-            imgSrc: "/img/sunglass-11.png",
+            imgSrc: sunglass11,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
@@ -94,13 +105,13 @@ const Shop = () => {
         },
         {
             title: "Sunglass 12",
-            imgSrc: "/img/sunglass-12.png",
+            imgSrc: sunglass12,
             price: "119.99",
             description: `Lorem ipsum, dolor sit amet consectetur adipisicing 
             elit. Rerum reiciendis fugiat quisquam possimus recusandae 
             similique daliquam voluptatibus eaque! Qui, dicta?`,
         },
-    ]);
+    ];
     function displayItems() {
         return itemArray.map((item) => {
             return (
